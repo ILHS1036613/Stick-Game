@@ -1,12 +1,17 @@
 import java.util.*;
 
+/* 
 
+
+
+*/
 class Main {
   public static void main(String[] args) {
 		boolean playAgain = true;
 		while(playAgain == true){
     	Scanner console = new Scanner(System.in);
 			int totalSticks = intro(console);
+			int playerMode = options(console);
 			int playerTurn = 1;
 			String tense = "are ";
 			while(totalSticks > 0)	{
@@ -69,5 +74,13 @@ class Main {
 			System.out.println("Player 1, you lose.");
 			return 2;
 		}
+	}
+
+	static int options(Scanner console)	{
+		System.out.println("Options:");
+		System.out.println(" Play against a friend (1)");
+		System.out.println(" Play against the computer (2)");
+		System.out.println("Which option do you take (1-2)? ");
+		return console.nextInt();
 	}
 }
